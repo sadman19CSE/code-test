@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+
+    int a,gun;
+
+    printf("Enter the number: ");
+    
+    scanf("%d",&a);
+    gun = a * a;
+
+  printf("Square: %d",gun);
+
+    return 0;
+}
