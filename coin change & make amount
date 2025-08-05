@@ -1,0 +1,50 @@
+
+#include <stdio.h>
+#define MAX_COINS 100
+
+int main()
+{
+    int n;
+    printf("Enter number of different coins: ");
+    scanf("%d", &n);
+
+    if (n > MAX_COINS)
+    {
+        printf("Too many coins!\n");
+        return 1;
+    }
+
+    int coins[MAX_COINS];
+
+    printf("Enter the value of each coin(highest to lowest):\n");
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &coins[i]);
+    }
+
+    int amount;
+    printf("Enter amount: ");
+    scanf("%d", &amount);
+
+    printf("Coins used to make %d taka:\n", amount);
+    for (int i = 0; i < n; i++)
+    {
+        int count = 0;
+        while (amount >= coins[i])
+        {
+            amount -= coins[i];
+            count++;
+        }
+        if (count > 0)
+        {
+            printf("%d taka coin: %d times\n", coins[i], count);
+        }
+    }
+
+    if (amount > 0)
+    {
+        printf("Cannot make the exact amount with the given coins.\n");
+    }
+
+    return 0;
+}
