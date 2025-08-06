@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main() {
+    int A,B,X,Y;
+
+   printf("Enter two numbers: ");
+    scanf("%ld %ld", &A, &B);
+
+    X = A + B;
+    Y = A * B;
+
+    printf("%ld %ld\n", X, Y);
+    
+    return 0;
+}
